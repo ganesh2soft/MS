@@ -1,0 +1,50 @@
+docker build -t springimg01 .
+minikube status
+minikube image load springimg01
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+kubectl get all
+kubectl get services
+kubectl get pods
+kubectl get deployment
+minikube service --all
+
+
+Before writing this script,
+
+Add your docker password as secret in jenkins
+Manage jenkins > credentials > add credentials
+Domain - Global credentials
+Kind : Secret text
+Secret : enter the password of dockerhub
+give id : dockerhubpwd
+Description: dockerhub password
+
+click on ADD
+
+In the withCredentials in pipeline syntax, choose this id(dockerhubpwd)
+
+delete the deepikkaa20/demoapp from the docker desktop
+
+Now build it and check it in the dockerhub repository
+
+
+
+
+
+
+
+https://www.youtube.com/watch?v=PKcGy9oPVXg
+
+
+
+
+
+
+
+
+
+
+
+
+
