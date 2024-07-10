@@ -1,0 +1,37 @@
+package com.wipro.articlesprbootapp.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.wipro.articlesprbootapp.entity.Article;
+import com.wipro.articlesprbootapp.service.ArticleService;
+
+@RestController
+@RequestMapping("/api/v1/articles")
+public class ArticleController {
+
+	private ArticleService articleService;
+
+	public ResponseEntity<List<Article>> getAllArticles() {
+		
+		
+		return null;
+	}
+
+	public Optional<Article> getArticleById(Long id) {
+		return null;
+	}
+
+	public Article saveArticle(Article article) {
+		return article;
+	}
+
+	public void deleteArticle(Long id) {
+	}
+
+	
+}

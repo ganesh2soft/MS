@@ -1,0 +1,5 @@
+package com.wipro.articlesprbootapp.controller;
+
+public class ArticleRestControllerHateoas {
+
+}

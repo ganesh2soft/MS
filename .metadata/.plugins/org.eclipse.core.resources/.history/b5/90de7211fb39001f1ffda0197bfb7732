@@ -1,0 +1,38 @@
+package com.wipro.reactivespringdemo.handler;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.server.ServerRequest;
+import org.springframework.web.reactive.function.server.ServerResponse;
+
+import com.wipro.reactivespringdemo.dao.CustomerDao;
+import com.wipro.reactivespringdemo.entity.Cust;
+import com.wipro.reactivespringdemo.entity.Customer;
+import com.wipro.reactivespringdemo.repository.CustomerRepository;
+import com.wipro.reactivespringdemo.service.CustomerService;
+
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+@Service
+public class CustHandler {
+	@Autowired
+	private CustomerDao customerDao;
+	
+	@Autowired
+	private CustomerService customerService;
+
+	public Mono<ServerResponse> loadCustomers(ServerRequest request) {
+		Flux<Cust> fluxCust = customerDao.getCustomersStream();
+		return ServerResponse.ok().body(fluxCust, Cust.class);
+	}
+	
+	
+	public Mono<ServerResponse> findACustomer(ServerRequest request) {
+		Long custid =Long.parseInt(request.pathVariable("input"));
+		Mono<Customer> custmono = customerService.getCustomerById();
+		return ServerResponse.ok().body(custmono, Customer.class);
+	}
+	
+
+}

@@ -1,0 +1,6 @@
+
+e	java:S106"+Replace this use of System.out by a logger.8ó÷ª2b bb1c3f2ea781263d3a2bb92b06a2061fh
+]
+java:S2189""Add an end condition to this loop.8ó÷ª2b 4756cb45a51652a90dc76a82ffad94bdh
+[
+java:S2129" Remove this "String" constructor8ó÷ª2b 27118326006d3829667a400ad23d5d98h

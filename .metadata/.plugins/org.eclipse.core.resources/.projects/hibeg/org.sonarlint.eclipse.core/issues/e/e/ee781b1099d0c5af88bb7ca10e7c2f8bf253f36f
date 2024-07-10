@@ -1,0 +1,22 @@
+
+^	java:S106"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S106"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S106"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S106"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S106"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S106"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S106:"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S106="+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S106@"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+f
+java:S1128"2Remove this unused import 'org.hibernate.Session'.b 8db765f059ed3357e71afc624840e7bfh
+m
+java:S1128"9Remove this unused import 'org.hibernate.SessionFactory'.b 836349435fd277987074405a8d75de4ch
+j
+java:S1128"6Remove this unused import 'org.hibernate.Transaction'.b e35c62e4ee5734a4aac048f74d1e35adh
+p
+java:S1128"<Remove this unused import 'org.hibernate.cfg.Configuration'.b cc491dd75c920a27b699f0116f39b6b3h
+i
+java:S1128"5Remove this unused import 'com.mph.model.Department'.b b662981641b280bc5436a14f314d73a1h
+g
+java:S1128"3Remove this unused import 'com.mph.model.Employee'.b b8fdec9cf25c8c2084ee2bfcc2ec0569h

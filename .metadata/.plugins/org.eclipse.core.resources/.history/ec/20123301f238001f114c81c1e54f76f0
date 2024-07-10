@@ -1,0 +1,74 @@
+package com.wipro.dao;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import org.springframework.stereotype.Repository;
+
+import com.wipro.entity.Article;
+
+@Repository
+public class ArticleDaoImpl implements ArticleDao{
+	
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	protected Session getSession() {
+		return sessionFactory.getCurrentSession();
+	}
+
+	@Override
+	public List<Article> getAllArticles() {
+		Query query = getSession().createQuery("from Article");
+		List<Article> artlist = query.list();
+		System.out.println("Art list == >" + artlist);
+		return artlist;
+	}
+
+	@Override
+	public Article getArticleById(Long id) {
+		
+		return getSession().get(Article.class, id);
+	}
+
+	@Override
+	public List<Article> saveArticle(Article article) {
+		getSession().saveOrUpdate(article);
+		System.out.println("Article saved successfully in DB !!!");
+		
+		return getAllArticles();
+	}
+
+	@Override
+	public List<Article> deleteArticle(Long id) {
+		Query query = getSession().createQuery("delete from Article where id= :aid");
+		query.setParameter("aid",id);
+		int noofrows = query.executeUpdate();
+		if(noofrows >0 ) {
+			System.out.println("Deleted ....");
+		}
+		
+		return getAllArticles();
+	}
+
+	@Override
+	public List<Article> updateArticle(Article article, Long id) {
+		Article articleexisting = getSession().get(Article.class, id);
+		if(articleexisting !=null) {
+			articleexisting.setTitle(article.getTitle());
+			articleexisting.setCategory(article.getCategory());
+			articleexisting.setLastModified(article.getLastModified());
+			
+			getSession().update(articleexisting);
+			System.out.println("Article Updated Successfully in DB !!!!");
+			
+		}else {
+			System.out.println("Article with id " + id + " doesnt exist...");
+		}		
+		return getAllArticles();
+	}
+
+}

@@ -1,0 +1,19 @@
+package com.wipro.articlesprbootapp.controller;
+
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.server.RepresentationModelAssembler;
+import org.springframework.stereotype.Component;
+
+import com.wipro.articlesprbootapp.entity.Article;
+
+@Component
+public class ArticleModelAssembler implements RepresentationModelAssembler<Article, EntityModel<Article>>{
+
+	@Override
+    public EntityModel<Article> toModel(Article article) {
+        return EntityModel.of(article,
+                linkTo(methodOn(ArticleRestController.class).getArticleById(article.getId())).withSelfRel(),
+                linkTo(methodOn(ArticleRestController.class).getAllArticles()).withRel("articles"));
+    }
+
+}

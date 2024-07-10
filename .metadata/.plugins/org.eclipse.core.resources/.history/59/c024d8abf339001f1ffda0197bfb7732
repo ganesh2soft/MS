@@ -1,0 +1,12 @@
+package com.wipro.reactivespringdemo.repository;
+
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
+import org.springframework.data.repository.reactive.ReactiveCrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.wipro.reactivespringdemo.entity.Customer;
+
+@Repository
+public interface CustomerRepository extends ReactiveMongoRepository<Customer, Long> {
+	
+}

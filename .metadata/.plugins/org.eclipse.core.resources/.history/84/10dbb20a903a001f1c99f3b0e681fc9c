@@ -1,0 +1,16 @@
+package com.wipro.articlesprbootapp.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.wipro.articlesprbootapp.service.ArticleService;
+
+@RestController
+@RequestMapping("/api/v1/articles")
+public class ArticleController {
+	
+	private ArticleService articleService;
+	
+	
+
+}

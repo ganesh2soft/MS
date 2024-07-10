@@ -1,0 +1,9 @@
+
+†
+java:S1104"RMake doorNo a static final constant or non-public and provide accessors if needed.b 50e8905efb5a5e572bdc300430b0e24dh
+†
+java:S1104"RMake street a static final constant or non-public and provide accessors if needed.b 1f4a9685e37e4f940d07a9f6b43dc83ch
+„
+java:S1104"PMake city a static final constant or non-public and provide accessors if needed.b 4ed5d2eaed1a1fadcc41ad1d58ed603eh
+‡
+java:S1104"SMake pincode a static final constant or non-public and provide accessors if needed.b 0bee8e95809f9a82de065c381e7aa230h

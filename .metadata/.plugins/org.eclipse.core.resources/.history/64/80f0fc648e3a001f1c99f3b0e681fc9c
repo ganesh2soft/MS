@@ -1,0 +1,5 @@
+package com.wipro.articlesprbootapp.entity;
+
+public class Article {
+
+}

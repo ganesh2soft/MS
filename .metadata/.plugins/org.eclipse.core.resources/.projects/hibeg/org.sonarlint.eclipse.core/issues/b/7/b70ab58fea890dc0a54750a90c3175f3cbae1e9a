@@ -1,0 +1,64 @@
+
+c
+java:S3740g"/Provide the parametrized type for this generic.b 66c1b4c7f3dc385b68a9fa903ccd016dh
+c
+java:S3740i"/Provide the parametrized type for this generic.b 2a29178a57901ddb90f15e2026465103h
+c
+java:S3740w"/Provide the parametrized type for this generic.b 66c1b4c7f3dc385b68a9fa903ccd016dh
+d
+java:S3740Ö"/Provide the parametrized type for this generic.b 66c1b4c7f3dc385b68a9fa903ccd016dh
+d
+java:S3740ù"/Provide the parametrized type for this generic.b 66c1b4c7f3dc385b68a9fa903ccd016dh
+ç
+java:S2293?"YReplace the type specification in this constructor call with the diamond operator ("<>").b 3bb9610c892cfa1f1868462b65cd7cb7h
+^	java:S106%"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S106("+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S106-"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S1060"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S1063"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S106<"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S106A"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S106C"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S106G"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S106J"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S106M"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S106P"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S106c"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+a
+java:S1874g"-Remove this use of "Query"; it is deprecated.b 66c1b4c7f3dc385b68a9fa903ccd016dh
+^	java:S106k"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S106q"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S106t"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+a
+java:S1874w"-Remove this use of "Query"; it is deprecated.b 66c1b4c7f3dc385b68a9fa903ccd016dh
+e
+java:S1874x"1Remove this use of "setString"; it is deprecated.b 4541516c782ba0ffc8b7c00924e92c98h
+f
+java:S1874y"2Remove this use of "setInteger"; it is deprecated.b 7b836087d23a26782751b8f741911787h
+^	java:S106}"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+_	java:S106Ç"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+b
+java:S1874Ö"-Remove this use of "Query"; it is deprecated.b 66c1b4c7f3dc385b68a9fa903ccd016dh
+g
+java:S1874Ö"2Remove this use of "setInteger"; it is deprecated.b 7b836087d23a26782751b8f741911787h
+l
+java:S1117Ü"7Rename "emp" which hides the field declared at line 25.b ac8be4aee61f5f6e21b8c5afffb52939h
+_	java:S106á"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+_	java:S106ç"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+k
+java:S1874ê"6Remove this use of "createCriteria"; it is deprecated.b 3b277a35bb2a645dae9a4bfa5f14e592h
+l
+java:S1117ì"7Rename "emp" which hides the field declared at line 25.b ac8be4aee61f5f6e21b8c5afffb52939h
+_	java:S106î"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+_	java:S106ö"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+b
+java:S1874ù"-Remove this use of "Query"; it is deprecated.b 66c1b4c7f3dc385b68a9fa903ccd016dh
+f
+java:S1874ù"1Remove this use of "setString"; it is deprecated.b 4541516c782ba0ffc8b7c00924e92c98h
+l
+java:S1117û"7Rename "emp" which hides the field declared at line 25.b ac8be4aee61f5f6e21b8c5afffb52939h
+_	java:S106ü"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+ä
+java:S1192!"ODefine a constant instead of duplicating this literal "Enter your ID:" 3 times.8˛Ô©øá2b 64d5fff648b5348dc5ae7a8e309ce7e8h
+e	java:S106!"+Replace this use of System.out by a logger.8˛Ô©øá2b bb1c3f2ea781263d3a2bb92b06a2061fh
+e	java:S1068"+Replace this use of System.out by a logger.8˛Ô©øá2b bb1c3f2ea781263d3a2bb92b06a2061fh

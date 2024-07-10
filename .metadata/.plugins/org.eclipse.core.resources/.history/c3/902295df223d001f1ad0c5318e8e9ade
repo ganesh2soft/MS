@@ -1,0 +1,36 @@
+package com.wipro.client.eurekaclient.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.wipro.client.eurekaclient.dto.Article;
+import com.wipro.client.eurekaclient.service.FeignServiceImpl;
+
+@RestController
+@RequestMapping("/feign")
+public class ArticleFeignController {
+	@Autowired
+	FeignServiceImpl feignServiceImpl;
+	
+	@GetMapping("/search/{id}")
+	public ResponseEntity<Article> searchByArticleId(@PathVariable Long id){
+		System.out.println("id --------------------> " +id);
+		Article article = feignServiceImpl.searchByArticleId(id);
+		return new ResponseEntity<>(article, HttpStatus.OK);
+	}
+	@GetMapping("/listallart")
+	public ResponseEntity<List<Article>> listAllArticles(){
+		List<Article> artlist = feignServiceImpl.listAllArticles();
+		if(artlist.isEmpty()) {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+		return new ResponseEntity<>(artlist, HttpStatus.OK);
+	}
+}

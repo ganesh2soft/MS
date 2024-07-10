@@ -1,0 +1,8 @@
+
+j
+java:S6437"6Revoke and change this password, as it is compromised.b eb76094059feda9f811de9a47a1307ach
+^	java:S106"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+ƒ
+java:S1104	"OMake con a static final constant or non-public and provide accessors if needed.b 7ed201fa20d25d22b291dc85ae9e5cedh
+]
+java:S1444	")Make this "public static con" field finalb 7ed201fa20d25d22b291dc85ae9e5cedh

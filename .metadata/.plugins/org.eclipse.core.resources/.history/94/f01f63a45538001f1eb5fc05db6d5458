@@ -1,0 +1,14 @@
+package com.wipro.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.wipro.dao.ArticleDao;
+
+@Service
+public class ArticleServiceImpl implements ArticleService{
+
+	@Autowired
+	private ArticleDao articleDao;
+	
+}

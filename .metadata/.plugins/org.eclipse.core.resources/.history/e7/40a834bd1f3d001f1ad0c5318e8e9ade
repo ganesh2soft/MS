@@ -1,0 +1,5 @@
+package com.wipro.client.eurekaclient.controller;
+
+public class ArticleFeignController {
+
+}

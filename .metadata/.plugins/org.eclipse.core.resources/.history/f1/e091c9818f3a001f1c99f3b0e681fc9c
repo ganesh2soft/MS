@@ -1,0 +1,48 @@
+package com.wipro.articlesprbootapp.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.wipro.articlesprbootapp.entity.Article;
+import com.wipro.articlesprbootapp.repository.ArticleRepository;
+
+@Service
+public class ArticleServiceImpl implements ArticleService{
+
+	@Autowired
+	private ArticleRepository articleRepository;
+	
+	
+	@Override
+	public List<Article> getAllArticles() {
+	
+		return null;
+	}
+
+	@Override
+	public Article getArticleById(Long id) {
+		
+		return null;
+	}
+
+	@Override
+	public List<Article> saveArticle(Article article) {
+		
+		return null;
+	}
+
+	@Override
+	public List<Article> deleteArticle(Long id) {
+		
+		return null;
+	}
+
+	@Override
+	public List<Article> updateArticle(Article article, Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,49 @@
+package com.wipro.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.wipro.dao.ArticleDao;
+import com.wipro.entity.Article;
+
+@Service
+@Transactional
+public class ArticleServiceImpl implements ArticleService{
+
+	@Autowired
+	private ArticleDao articleDao;
+
+	@Override
+	public List<Article> getAllArticles() {
+		
+		return articleDao.getAllArticles();
+	}
+
+	@Override
+	public Article getArticleById(Long id) {
+	
+		return articleDao.getArticleById(id);
+	}
+
+	@Override
+	public List<Article> saveArticle(Article article) {
+		
+		return articleDao.saveArticle(article);
+	}
+
+	@Override
+	public List<Article> deleteArticle(Long id) {
+		
+		return articleDao.deleteArticle(id);
+	}
+
+	@Override
+	public List<Article> updateArticle(Article article, Long id) {
+		
+		return articleDao.updateArticle(article, id);
+	}
+	
+}

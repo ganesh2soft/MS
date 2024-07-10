@@ -1,0 +1,114 @@
+package com.wipro.articlesprbootapp.controller;
+
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+
+import com.wipro.articlesprbootapp.entity.Article;
+import com.wipro.articlesprbootapp.exception.ArticleNotFoundException;
+import com.wipro.articlesprbootapp.service.ArticleService;
+import org.springframework.hateoas.CollectionModel;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.IanaLinkRelations;
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
+
+@RestController
+@RequestMapping("/api/v1/articles/hateos")
+@CrossOrigin(allowCredentials = "false", allowedHeaders = "*", origins = "*", methods = { RequestMethod.GET,
+		RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE })
+public class ArticleRestControllerHateoas {
+
+	@Autowired
+	private ArticleService articleService;
+
+	@Autowired
+	ArticleModelAssembler articleModelAssembler;
+
+	@GetMapping("/all")
+	public ResponseEntity<CollectionModel<EntityModel<Article>>> getAllArticles() {
+
+		try {
+			List<EntityModel<Article>> artlist = articleService.getAllArticles().stream()
+					.map(articleModelAssembler::toModel).collect(Collectors.toList());
+
+			return ResponseEntity.ok(CollectionModel.of(artlist,
+					linkTo(methodOn(ArticleController.class).getAllArticles()).withSelfRel()));
+		} catch (Exception e) {
+			  return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+
+	}
+
+	  @GetMapping("/{id}")
+	    public ResponseEntity<EntityModel<Article>> getArticleById(@PathVariable("id") Long id) {
+	        Article article = articleService.getArticleById(id)
+	                .orElseThrow(() -> new ArticleNotFoundException(id));
+	        return ResponseEntity.ok(articleModelAssembler.toModel(article));
+	    }
+
+	    @PostMapping("/add")
+	    public ResponseEntity<EntityModel<Article>> addArticle(@RequestBody Article article) {
+	        EntityModel<Article> entityModel = articleModelAssembler.toModel(articleService.saveArticle(article));
+	        return ResponseEntity
+	                .created(entityModel.getRequiredLink(IanaLinkRelations.SELF).toUri())
+	                .body(entityModel);
+	    }
+
+	    @PutMapping("/{id}")
+	    public ResponseEntity<CollectionModel<EntityModel<Article>>> updateArticle(@PathVariable Long id, @RequestBody Article article) {
+	        try {
+	            List<Article> updatedArticles = articleService.updateArticle(article, id);
+	            List<EntityModel<Article>> updatedArticlesModels = updatedArticles.stream()
+	                    .map(articleModelAssembler::toModel)
+	                    .collect(Collectors.toList());
+	            return ResponseEntity.ok(CollectionModel.of(updatedArticlesModels));
+	        } catch (ArticleNotFoundException e) {
+	            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+	        } catch (Exception e) {
+	            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+	        }
+	    }
+
+	    @DeleteMapping("/delete/{id}")
+	    public ResponseEntity<Void> deleteArticle(@PathVariable("id") Long id) {
+	        articleService.deleteArticle(id);
+	        return ResponseEntity.noContent().build();
+	    }
+
+	   
+	    @GetMapping("/paged")
+	    public ResponseEntity<Page<EntityModel<Article>>> getArticles(Pageable pageable) {
+	        Page<Article> articles = articleService.getArticlesByPage(pageable);
+	        if (articles.isEmpty()) {
+	            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	        }
+	        Page<EntityModel<Article>> articleModels = articles.map(articleModelAssembler::toModel);
+	        return ResponseEntity.ok(articleModels);
+	    }
+	
+}

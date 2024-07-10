@@ -1,0 +1,13 @@
+package com.wipro.dao;
+
+import java.util.List;
+
+import com.wipro.entity.Article;
+
+public interface ArticleDao {
+	public List<Article> getAllArticles();
+	public Article getArticleById(Long id);
+	public List<Article> saveArticle(Article article);
+	public List<Article> deleteArticle(Long id);
+	public List<Article> updateArticle(Article article, Long id)
+}

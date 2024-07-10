@@ -1,0 +1,48 @@
+package com.wipro.reactivespringdemo.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.wipro.reactivespringdemo.dao.CustomerDao;
+import com.wipro.reactivespringdemo.dto.CustomerDto;
+import com.wipro.reactivespringdemo.entity.Cust;
+import com.wipro.reactivespringdemo.entity.Customer;
+import com.wipro.reactivespringdemo.repository.CustomerRepository;
+import com.wipro.reactivespringdemo.utils.AppUtils;
+
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+@Service
+public class CustomerService {
+	@Autowired
+	private CustomerRepository customerRepository;
+	
+	@Autowired
+	private CustomerDao dao;
+
+	public Flux<Customer> getAllCustomers() {
+
+		return customerRepository.findAll();
+	}
+
+	public Mono<Customer> saveCustomer(Customer customer) {
+
+		return customerRepository.save(customer);
+	}
+
+	public Mono<CustomerDto> getCustomerById(Long id) {
+
+		return customerRepository.findById(id).map(AppUtils::entityToDto);
+	}
+	
+	public List<Cust> loadAllCusts(){
+		long startTime = System.currentTimeMillis();
+		dao.
+		
+		
+	}
+
+}

@@ -1,0 +1,30 @@
+package com.wipro.reactivespringdemo;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+@SpringBootTest
+class ReactivespringdemoApplicationTests {
+
+	@Test
+	public void testMono() {
+		Mono<String> monoString = Mono.just("Deepikkaa");
+		monoString.subscribe(System.out::println);
+		
+		//Mono<String> monoString1 = Mono.just("Deepikkaa").log();
+		//monoString1.subscribe(System.out::println);
+		
+//		Mono<?> monoString2 = Mono.just("Asha")
+//				.then(Mono.error(new RuntimeException("Exception Occured...")))
+//				.log();
+//		monoString2.subscribe(System.out::println, e->System.out.println(e.getMessage()));
+//		
+		
+		Flux<String> fluxString = Flux.just("Apple","Orange","Cherry","Banana").log()
+		
+	}
+
+}

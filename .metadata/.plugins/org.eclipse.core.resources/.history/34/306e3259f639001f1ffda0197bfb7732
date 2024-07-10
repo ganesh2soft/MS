@@ -1,0 +1,31 @@
+package com.wipro.reactivespringdemo.entity;
+
+public class Cust {
+	private int id;
+	private String name;
+	public Cust() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Cust(int id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	@Override
+	public String toString() {
+		return "Cust [id=" + id + ", name=" + name + "]";
+	}	
+}

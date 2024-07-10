@@ -1,0 +1,11 @@
+package com.wipro.articlesprbootapp;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+//@SpringBootTest
+//class ArticlesprbootappApplicationTests {
+//
+//	
+//
+//}

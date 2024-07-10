@@ -1,0 +1,21 @@
+package com.wipro.reactivespringdemo.utils;
+
+import org.springframework.beans.BeanUtils;
+
+import com.wipro.reactivespringdemo.dto.CustomerDto;
+import com.wipro.reactivespringdemo.entity.Customer;
+
+public class AppUtils {
+	
+	public static CustomerDto entityToDto(Customer customer) {
+		CustomerDto customerDto = new CustomerDto();
+		BeanUtils.copyProperties(customer, customerDto);
+		return customerDto;
+	}
+	
+	public static CustomerDto dtoToEntity(CustomerDto customerDto) {
+		Customer customer = new Customer();
+		BeanUtils.copyProperties(customerDto, customer);
+		return customer;
+	}
+}

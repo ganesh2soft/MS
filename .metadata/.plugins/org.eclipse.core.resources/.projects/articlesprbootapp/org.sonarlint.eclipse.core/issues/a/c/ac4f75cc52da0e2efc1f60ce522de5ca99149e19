@@ -1,0 +1,22 @@
+
+a
+java:S14521"&Remove usage of generic wildcard type.8’ÑŠ’‰2b d1457b72c3fb323a2671125aef3eab5dh
+k
+java:S1128"0Remove this unused import 'java.time.LocalDate'.8”›Ê„‰2b ffa986c415054dd35650ac8c9c4c9ac7h
+
+java:S27894"FEnsure this "Optional" could never be null and remove this null-check.8Ğ°±‹ˆ2b 48a9e1e765310be2abf30cad3d32d186h
+}
+java:S6813#"BRemove this field injection and use constructor injection instead.8«Ø‰ˆ2b 0132ec8cee01c5dd244e1a60fe6448a1h
+Œ
+java:S1128
+"QRemove this unused import 'org.springframework.format.annotation.DateTimeFormat'.8”›Ê„‰2b c43d8ece67ffba9383a43fa9f0de4065h
+
+java:S2789D"FEnsure this "Optional" could never be null and remove this null-check.8£š›‹ˆ2b 48a9e1e765310be2abf30cad3d32d186h
+Œ
+java:S1128"QRemove this unused import 'org.springframework.web.bind.annotation.RequestParam'.8”›Ê„‰2b 3b80d5c9c840440eb47c26354612dcbeh
+
+java:S1128"URemove this unused import 'org.springframework.format.annotation.DateTimeFormat.ISO'.8”›Ê„‰2b d518c400c5c9de454b1492d60d2b394dh
+j
+java:S37405"/Provide the parametrized type for this generic.8óî‹ˆ2b 3e8b518e54342f8da4e05d5b1d90b2d7h
+j
+java:S3740E"/Provide the parametrized type for this generic.8Ğ°±‹ˆ2b 3e8b518e54342f8da4e05d5b1d90b2d7h

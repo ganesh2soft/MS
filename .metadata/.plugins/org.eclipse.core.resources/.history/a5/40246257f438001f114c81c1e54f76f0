@@ -1,0 +1,54 @@
+package com.wipro.controller;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.wipro.entity.Article;
+import com.wipro.service.ArticleService;
+
+@Controller
+@RequestMapping("/articles")
+public class ArticleController {
+	@Autowired
+	private ArticleService articleService;
+
+	@GetMapping("/")
+	public ModelAndView getLandingPage() {
+		return new ModelAndView("article-list");
+	}
+	
+	@GetMapping("/article-list")
+	public ModelAndView listArticles() { 
+		List<Article> larticle = articleService.getAllArticles();
+		ModelAndView modelAndView = new ModelAndView("article-list");
+		modelAndView.addObject("article",larticle);
+		return modelAndView;
+	}
+	
+	
+	@GetMapping("/new")
+	public ModelAndView showMyForm() {
+		Article article = new Article();
+		ModelAndView modelAndView = new ModelAndView("article-form");
+		modelAndView.addObject("article", article);
+		return modelAndView;
+	}
+
+	@PostMapping("/save")
+	public ModelAndView saveArticle(@ModelAttribute("article") Article article,
+			@RequestParam("lastModified") @DateTimeFormat(iso = ISO.DATE) LocalDate lastModified) {
+		article.setLastModified(lastModified);
+
+		articleService.saveArticle(article);
+
+		return new ModelAndView("redirect:/articles/article-list");
+	}
+
+}

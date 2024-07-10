@@ -1,0 +1,7 @@
+
+}
+java:S6813"BRemove this field injection and use constructor injection instead.8žøôŠˆ2b 0132ec8cee01c5dd244e1a60fe6448a1h
+W
+java:S1116+"Remove this empty statement.8ŒŸüŠˆ2b 9eecb7db59d16c80417c72d1e1f4fbf1h
+f
+java:S11681"+Return an empty collection instead of null.8‹Òøƒ‰2b 37a6259cc0c1dae299a7866489dff0bdh

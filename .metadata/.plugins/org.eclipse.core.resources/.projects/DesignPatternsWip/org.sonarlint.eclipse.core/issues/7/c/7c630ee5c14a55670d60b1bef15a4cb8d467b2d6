@@ -1,0 +1,9 @@
+
+v
+java:S1854";Remove this useless assignment to local variable "display".8—ﬁ∂’Ç2b c5e809f17db31fc896f4565ed309caa8h
+g
+java:S1481",Remove this unused "display" local variable.8—ﬁ∂’Ç2b ebf78b512222fe4dcd14e7d5060a15b0h
+e	java:S106
+"+Replace this use of System.out by a logger.8úﬂ›’Ç2b bb1c3f2ea781263d3a2bb92b06a2061fh
+e	java:S106"+Replace this use of System.out by a logger.8úﬂ›’Ç2b bb1c3f2ea781263d3a2bb92b06a2061fh
+e	java:S106"+Replace this use of System.out by a logger.8úﬂ›’Ç2b bb1c3f2ea781263d3a2bb92b06a2061fh

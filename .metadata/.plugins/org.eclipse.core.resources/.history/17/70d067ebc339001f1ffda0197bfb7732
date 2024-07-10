@@ -1,0 +1,2 @@
+spring.application.name=reactivespringdemo
+spring.port=8081

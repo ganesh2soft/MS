@@ -1,0 +1,7 @@
+127.0.0.1 - - [09/Jul/2024:14:13:37 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [09/Jul/2024:14:13:38 +0530] "GET /wiparticlesprmvc/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [09/Jul/2024:14:13:38 +0530] "GET /wiparticlesprmvc/articles/ HTTP/1.1" 200 416
+0:0:0:0:0:0:0:1 - - [09/Jul/2024:14:13:38 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [09/Jul/2024:14:13:47 +0530] "GET /wiparticlesprmvc/articles/new HTTP/1.1" 200 1409
+0:0:0:0:0:0:0:1 - - [09/Jul/2024:14:13:55 +0530] "POST /wiparticlesprmvc/articles/save HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [09/Jul/2024:14:13:55 +0530] "GET /wiparticlesprmvc/articles/article-list HTTP/1.1" 200 785

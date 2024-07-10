@@ -1,0 +1,57 @@
+package com.wipro.dao;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.wipro.entity.Article;
+
+@Repository
+public class ArticleDaoImpl implements ArticleDao{
+	
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	protected Session getSession() {
+		return sessionFactory.getCurrentSession();
+	}
+
+	@Override
+	public List<Article> getAllArticles() {
+		Query query = getSession().createQuery("from Article");
+		List<Article> artlist = query.list();
+		System.out.println("Art list == >" + artlist);
+		return artlist;
+	}
+
+	@Override
+	public Article getArticleById(Long id) {
+		
+		return getSession().get(Article.class, id);
+	}
+
+	@Override
+	public List<Article> saveArticle(Article article) {
+		getSession().saveOrUpdate(article);
+		System.out.println("Article saved successfully in DB !!!");
+		
+		return getAllArticles();
+	}
+
+	@Override
+	public List<Article> deleteArticle(Long id) {
+		
+		return null;
+	}
+
+	@Override
+	public List<Article> updateArticle(Article article, Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

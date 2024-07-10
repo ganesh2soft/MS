@@ -1,0 +1,16 @@
+package com.wipro.client.eurekaclient.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class FeignServiceImpl {
+	@Autowired
+	ArticleClient articleClient;
+	
+	public Article searchByArticleId(Long id) {
+		Article art = articleClient.getArticleById(id);
+		System.out.println("art ***********" + art);
+		return art;
+	}
+}

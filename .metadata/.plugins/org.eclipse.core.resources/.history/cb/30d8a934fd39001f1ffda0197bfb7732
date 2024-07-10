@@ -1,0 +1,26 @@
+package com.wipro.reactivespringdemo.router;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.reactive.function.server.RouterFunction;
+import org.springframework.web.reactive.function.server.RouterFunctions;
+import org.springframework.web.reactive.function.server.ServerResponse;
+
+import com.wipro.reactivespringdemo.handler.CustHandler;
+
+@Configuration
+public class RouterConfig {
+	@Autowired
+	private CustHandler custHandler;
+
+	@Bean
+	public RouterFunction<ServerResponse> route() {
+		
+		return RouterFunctions.route()
+				.GET("/router/loadcustomer", custHandler::loadCustomers)
+				.GET("/router/findcustomer/{input}", custHandler::findACustomer)
+				.build();
+	}
+
+}

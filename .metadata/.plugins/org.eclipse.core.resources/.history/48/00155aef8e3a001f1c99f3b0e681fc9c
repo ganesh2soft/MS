@@ -1,0 +1,5 @@
+package com.wipro.articlesprbootapp.repository;
+
+public interface ArticleRepository {
+
+}

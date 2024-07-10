@@ -1,0 +1,7 @@
+spring.application.name=articlesprbootapp
+
+database.driver=com.mysql.cj.jdbc.Driver
+database.url=jdbc:mysql://localhost:3306/wipdb
+database.username=root
+database.password=root
+

@@ -1,0 +1,8 @@
+
+e	java:S106"+Replace this use of System.out by a logger.8ïÍàô‚2b bb1c3f2ea781263d3a2bb92b06a2061fh
+p
+java:S1854
+"5Remove this useless assignment to local variable "x".8Àüöô‚2b d8c9be34cbc2898f7af2c203d56bf9f1h
+e	java:S106
+"+Replace this use of System.out by a logger.8Àüöô‚2b bb1c3f2ea781263d3a2bb92b06a2061fh
+e	java:S106"+Replace this use of System.out by a logger.8½¾õ‚2b bb1c3f2ea781263d3a2bb92b06a2061fh

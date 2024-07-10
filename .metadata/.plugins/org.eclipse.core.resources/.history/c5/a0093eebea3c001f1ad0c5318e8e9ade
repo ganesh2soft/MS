@@ -1,0 +1,104 @@
+package com.wipro.articlesprbootapp.controller;
+
+package com.wipro.articlesprbootapp.controller;
+
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.wipro.articlesprbootapp.entity.Article;
+import com.wipro.articlesprbootapp.service.ArticleService;
+
+@RestController
+@RequestMapping("/api/v1/articles")
+@CrossOrigin(allowCredentials = "false", allowedHeaders = "*", origins = "*", methods = { RequestMethod.GET,
+		RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE })
+public class ArticleControllerHateoas {
+
+	@Autowired
+	private ArticleService articleService;
+
+	@GetMapping("/all")
+	public ResponseEntity<List<Article>> getAllArticles() {
+		List<Article> artlist = articleService.getAllArticles();
+
+		if (artlist.isEmpty()) {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+		return new ResponseEntity<>(artlist, HttpStatus.OK);
+	}
+
+	@GetMapping("/{id}")
+	public ResponseEntity<Article> getArticleById(@PathVariable("id") Long id) {
+
+		Optional<Article> article = articleService.getArticleById(id);
+		if (article == null) {
+			return new ResponseEntity(HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<>(HttpStatus.OK);
+	}
+
+	@PostMapping("/add")
+	public ResponseEntity<Article> saveArticle(@RequestBody Article article) {
+
+		Article newarticle = articleService.saveArticle(article);
+		return new ResponseEntity<>(newarticle, HttpStatus.OK);
+	}
+
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Void> deleteArticle(@PathVariable("id") Long id) {
+		Optional<Article> article = articleService.getArticleById(id);
+		if (article == null) {
+			return new ResponseEntity(HttpStatus.NOT_FOUND);
+		}
+		articleService.deleteArticle(id);
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	}
+
+	@PutMapping("/update/{id}")
+	public ResponseEntity<Article> updateArticle(@PathVariable("id") Long id, @RequestBody Article article) {
+		Optional<Article> existingArticle = articleService.getArticleById(id);
+		if (existingArticle.isEmpty()) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+
+		// Update the existing article with the new details
+		Article updatedArticle = existingArticle.get();
+		updatedArticle.setTitle(article.getTitle());
+		updatedArticle.setCategory(article.getCategory());
+		updatedArticle.setLastModified(article.getLastModified());
+
+		articleService.saveArticle(updatedArticle);
+		return new ResponseEntity<>(updatedArticle, HttpStatus.OK);
+	}
+
+	@GetMapping("/paged")
+	public ResponseEntity<Page<Article>> getArticlesByPage(Pageable pagable) {
+
+		Page<Article> articles = articleService.getArticlesByPage(pagable);
+		if (articles.isEmpty()) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<>(articles, HttpStatus.OK);
+	}
+
+}

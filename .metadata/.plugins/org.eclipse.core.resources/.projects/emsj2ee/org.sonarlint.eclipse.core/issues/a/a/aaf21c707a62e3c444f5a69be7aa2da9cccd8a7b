@@ -1,0 +1,20 @@
+
+u
+java:S1161":Add the "@Override" annotation above this method signature8ÂýÝé…2b e194e70fa88fb46dba684dafa1710d2ah
+‹
+java:S1989"PHandle the following exception that could be thrown by "getWriter": IOException.8ÂýÝé…2b ed8bb92201fdd9d9fa23d3e70196b5e8h
+e	java:S106"+Replace this use of System.out by a logger.8ÂýÝé…2b bb1c3f2ea781263d3a2bb92b06a2061fh
+š
+java:S1989"_Handle the following exceptions that could be thrown by "doGet": ServletException, IOException.8ÂýÝé…2b e194e70fa88fb46dba684dafa1710d2ah
+u
+java:S1161":Add the "@Override" annotation above this method signature8ÂýÝé…2b afaa9e78302a844691c224dc41a65519h
+e	java:S106"+Replace this use of System.out by a logger.8–š°ë…2b bb1c3f2ea781263d3a2bb92b06a2061fh
+u
+java:S1161!":Add the "@Override" annotation above this method signature8áá±ë…2b fb14982288108e1fbd6207ef55f05027h
+e	java:S106""+Replace this use of System.out by a logger.8áá±ë…2b bb1c3f2ea781263d3a2bb92b06a2061fh
+u
+java:S1161":Add the "@Override" annotation above this method signature8Ð€´ë…2b e37f0136aa3ffaf149b351f6a4c948e9h
+‹
+java:S1989"PHandle the following exception that could be thrown by "getWriter": IOException.8«ã©í…2b ed8bb92201fdd9d9fa23d3e70196b5e8h
+_
+java:S1948"$Make "sc" transient or serializable.8£â§ð…2b d54185b71f614c30a396ac4bc44d3269h
