@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eurekaclient-deployment
+spec:
+  replicas: 1  # Number of instances (pods) to run
+  selector:
+    matchLabels:
+      app: eurekaclient
+  template:
+    metadata:
+      labels:
+        app: eurekaclient
+    spec:
+      containers:
+      - name: eurekaclient
+        image: ganesh2soft/eurekaclient:latest # Replace with your Docker image name
+        imagePullPolicy: IfNotPresent  
+        
+        ports:
+        - containerPort: 8765  # Port that your Spring Boot application listens on inside the container
