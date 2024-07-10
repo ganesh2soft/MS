@@ -4,9 +4,9 @@
 						
 						RUN ls -al
 						
-						COPY  articlesprbootapp-1.0.jar /articlesprbootapp-1.0/articlesprbootapp-1.0.jar
+						COPY  eurekaclient-0.0.1-SNAPSHOT.jar /eurekaclient/eurekaclient.jar
 						
-						WORKDIR /articlesprbootapp-1.0
+						WORKDIR /eurekaclient
 						
 						RUN pwd
 						
@@ -15,5 +15,5 @@
                         EXPOSE 9400
 						
 						
-                        CMD ["java", "-jar", "articlesprbootapp-1.0.jar"]
+                        CMD ["java", "-jar", "eurekaclient.jar"]
                     

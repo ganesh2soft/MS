@@ -4,9 +4,11 @@
 						
 						RUN ls -al
 						
-						COPY  articlesprbootapp-1.0.jar /articlesprbootapp-1.0/articlesprbootapp-1.0.jar
+						RUN dir
 						
-						WORKDIR /articlesprbootapp-1.0
+						COPY  target/apigateway-0.0.1-SNAPSHOT.jar /apigateway/apigateway.jar
+						
+						WORKDIR /apigateway
 						
 						RUN pwd
 						
@@ -15,5 +17,5 @@
                         EXPOSE 9400
 						
 						
-                        CMD ["java", "-jar", "articlesprbootapp-1.0.jar"]
+                        CMD ["java", "-jar", "apigateway.jar"]
                     
