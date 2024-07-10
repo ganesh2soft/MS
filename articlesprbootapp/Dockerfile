@@ -4,7 +4,7 @@
 						
 						RUN ls -al
 						
-						COPY  articlesprbootapp-1.0.jar /articlesprbootapp-1.0/articlesprbootapp-1.0.jar
+						COPY  target/articlesprbootapp-1.0.jar /articlesprbootapp-1.0/articlesprbootapp-1.0.jar
 						
 						WORKDIR /articlesprbootapp-1.0
 						
@@ -12,8 +12,7 @@
 						
 						RUN ls -al
                                              
-                        EXPOSE 9400
-						
+                    				
 						
                         CMD ["java", "-jar", "articlesprbootapp-1.0.jar"]
                     

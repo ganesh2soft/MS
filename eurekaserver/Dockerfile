@@ -4,7 +4,7 @@
 						
 						RUN ls -al
 						
-						COPY  eurekaserver-0.0.1-SNAPSHOT.jar /eurekaserver/eurekaserver.jar
+						COPY  target/eurekaserver-0.0.1-SNAPSHOT.jar /eurekaserver/eurekaserver.jar
 						
 						WORKDIR /eurekaserver
 						
@@ -12,8 +12,7 @@
 						
 						RUN ls -al
                                              
-                        EXPOSE 9400
-						
+                        				
 						
                         CMD ["java", "-jar", "eurekaserver.jar"]
                     

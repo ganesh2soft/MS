@@ -14,7 +14,7 @@
 						
 						RUN ls -al
                                              
-                        EXPOSE 9400
+                       
 						
 						
                         CMD ["java", "-jar", "apigateway.jar"]
